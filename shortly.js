@@ -11,8 +11,8 @@ var Links = require('./app/collections/links');
 var Link = require('./app/models/link');
 var Click = require('./app/models/click');
 
-var app = express();
 
+var app = express();
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(partials());
@@ -23,9 +23,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
 
+
+
+
+
 app.get('/', 
 function(req, res) {
-  res.render('index');
+  console.log(req, 'this is the req@#@$#@#$#@$#@@$#@$#$#@$#@$#@$#@$#@$#@#$@$#@$#@$@#$@#$@$');
+  console.log(res, 'this is the res');
+  res.send(res);
 });
 
 app.get('/create', 
@@ -104,4 +110,4 @@ app.get('/*', function(req, res) {
 });
 
 console.log('Shortly is listening on 4568');
-app.listen(4568);
+app.listen(1500);
